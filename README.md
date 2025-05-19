@@ -30,7 +30,7 @@ pip freeze > requirements.txt
 Edit to keep only essential packages (e.g., `torch`, `mne`), as described in `docs/setup.md`.
 
 ## Datasets
-1. Download BCI Competition IV-2a/2b datasets from [BCI Competition IV]((https://www.bbci.de/competition/iv/#dataset2a)).
+1. Download BCI Competition IV-2a/2b datasets from [BCI Competition IV](https://www.bbci.de/competition/iv/#dataset2a).
 ![ConSegAP Architecture](figures/data_structure.png)
 3. Preprocess data (bandpass filter 8–30 Hz, artifact removal) using `preprocess/preprocess_bci.py`.
 4. Place preprocessed `.mat` files in `data/`:
