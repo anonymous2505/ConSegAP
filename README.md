@@ -2,7 +2,7 @@
 
 This repository is the official implementation of ConSegAp.
 
-![ConSegAP Architecture](figures/figure1_segmentation.png)
+![ConSegAP Architecture](figures/architect.png)
 
 ## Requirements
 
