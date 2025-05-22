@@ -75,6 +75,7 @@ Edit to keep only essential packages (e.g., `torch`, `mne`), as described in `do
           B01E.mat
           B01T.mat
           ...
+If you want to skip this step, you can find the processed data [here](https://drive.google.com/drive/folders/1HnIWjzlpS-5Md0kQqa-HtD0MNO5JZlEo?usp=sharing).
 ## Training
 
 To train ConSegAP on BCI IV-2a for a specific subject (e.g., sub01), run:
@@ -98,7 +99,7 @@ python train_model.py --data 2b --data-dir ./data/4_2b_data/standard_and_break_t
 Run `python train_model.py --help` for options.
 
 ## Evaluation
-
+We have provided some [weights](https://drive.google.com/drive/folders/1HnIWjzlpS-5Md0kQqa-HtD0MNO5JZlEo?usp=sharing) for you to quickly reproduce our results.
 To evaluate the trained ConSegAP model on BCI IV-2a for a subject (e.g., sub01), run:
 
 ```bash
@@ -139,34 +140,66 @@ ConSegAP outperforms baseline methods on the BCI Competition IV-2a and IV-2b dat
 
 | Method        | Precision ↑ | Recall ↑ | F1 ↑ | Grid Acc. (%) ↑ | Event Acc. (%) ↑ | Event IoU ↑ |
 |---------------|-------------|----------|------|-----------------|------------------|-------------|
-| **BCI IV-2a** | | | | | | | |
+|||| **BCI IV-2a** ||||
 | EEGNet        | 0.54 ± 0.07 | 0.53 ± 0.07 | 0.52 ± 0.08 | 75.8 ± 3.7 | 51.3 ± 10.9 | 0.50 ± 0.31 |
 | DeepConvNet   | 0.54 ± 0.07 | 0.53 ± 0.07 | 0.52 ± 0.07 | 76.5 ± 3.8 | 54.7 ± 12.7 | 0.59 ± 0.17 |
 | Conformer     | 0.61 ± 0.13 | 0.55 ± 0.12 | 0.54 ± 0.14 | _85.1 ± 7.2_ | 57.9 ± 20.5 | 0.83 ± 0.07 |
 | CTNet         | _0.69 ± 0.15_ | _0.69 ± 0.16_ | _0.66 ± 0.17_ | 83.8 ± 7.3 | _64.9 ± 17.2_ | _0.89 ± 0.03_ |
 | **ConSegAP**  | **0.74 ± 0.14** | **0.72 ± 0.14** | **0.71 ± 0.15** | **85.5 ± 7.8** | **71.1 ± 17.0** | **0.90 ± 0.02** |
-| **BCI IV-2b** | | | | | | | |
+|||| **BCI IV-2b** ||||
 | EEGNet        | 0.55 ± 0.06 | 0.50 ± 0.11 | 0.45 ± 0.08 | 54.1 ± 15.7 | 62.4 ± 10.5 | 0.52 ± 0.18 |
 | DeepConvNet   | 0.51 ± 0.08 | 0.51 ± 0.07 | 0.46 ± 0.08 | 54.1 ± 13.8 | 68.9 ± 12.1 | 0.31 ± 0.10 |
 | Conformer     | 0.58 ± 0.09 | 0.58 ± 0.09 | 0.54 ± 0.09 | 59.6 ± 11.0 | 66.5 ± 10.8 | 0.57 ± 0.15 |
 | CTNet         | _0.83 ± 0.09_ | _0.82 ± 0.09_ | _0.82 ± 0.10_ | _89.6 ± 5.7_ | _73.3 ± 17.1_ | _0.81 ± 0.19_ |
 | **ConSegAP**  | **0.88 ± 0.08** | **0.88 ± 0.08** | **0.88 ± 0.08** | **92.2 ± 5.1** | **85.2 ± 9.9** | **0.85 ± 0.03** |
 
-**Reproduce Results**:
-- Evaluate per-subject metrics with:
+## Online Experiment
+
+This part describes how to reproduce ConSegAP’s online EEG segmentation experiment on a 60-second reconstructed EEG sequence from the BCI IV-2a dataset (15,000 timesteps, 250 Hz), embedding 3–9 motor imagery events. The experiment uses a sliding window of 5000 timesteps (20 seconds) with a step size of 3, simulating real-time EEG streaming. Included pre-trained weights and preprocessed data allow rapid replication of the paper’s results, with ConSegAP achieving ~10 ms latency and high event boundary accuracy.
+
+### Dataset Processing
+
+Preprocess to reconstruct the 60-second sequence：
 ```bash
-python eval_model.py --model-file models/consegap_bci_2a_sub01.pth --data-dir data/bci_iv_2a --subject sub01 --batch-size 32
+python preprocess/online-sequence.py
 ```
-- Aggregate results across all subjects:
+This code will generate ' test_data.h5'. To use this data directly, ensure it’s in:
+
+```
+data/
+  Online_exp_data/
+    test_data.h5  # Preprocessed 60-second sequence
+```
+
+### Running the Experiment
+
+Use the included pre-trained weights (`models/consegap_bci_2a.pth`) and preprocessed data to run the online segmentation experiment:
+
 ```bash
-python eval_model.py --data-dir data/bci_iv_2a --batch-size 32 --all-subjects
+python eval_model.py --model-file models/consegap_bci_2a.pth --data-file data/bci_iv_2a/online_sequence.mat --online --window-size 5000 --step-size 2 --batch-size 32
 ```
-- For BCI IV-2b, replace `--data-dir data/bci_iv_2a` with `--data-dir data/bci_iv_2b` and use the corresponding model file.
-- Generate per-subject performance plots:
+
+This command processes the 60-second sequence with a 20-second sliding window (5000 timesteps), advancing by 2 timesteps, and aggregates predictions via majority voting, reproducing the paper’s real-time results.
+
+### Results
+
+ConSegAP outperforms baselines in online segmentation, achieving high event boundary accuracy and a sampling rate of 118 samples/s (~10 ms latency). The table below compares Event-level IoU and sampling rates for the BCI IV-2a online experiment, with the best result in **bold**.
+
+| Method        | Event-level IoU ↑ | Samples/s | Model Link |
+|---------------|-------------------|-----------|------------|
+| EEGNet        | 0.50 ± 0.31       | 115       | -          |
+| DeepConvNet   | 0.59 ± 0.17       | 112       | -          |
+| Conformer     | 0.83 ± 0.07       | 105       | -          |
+| CTNet         | 0.89 ± 0.03       | 86        | -          |
+| **ConSegAP**  | **0.90 ± 0.02**   | **118**   | [Link](https://drive.google.com/file/d/anonymous_consegap_bci_2a.pth) |
+
+**Visualize Results**:
+Generate a plot of event boundary alignment (as shown in the paper’s Figure):
 ```bash
-python plot_results.py --results-dir results/bci_2a --output figures/per_subject_performance.png
+python plot_results.py --results-dir results/bci_2a --online --output figures/online_results.png
 ```
-Results for BCI IV-2a and IV-2b are saved in `results/bci_2a/` and `results/bci_2b/`, respectively, matching the paper’s reported performance. See the code repository at [https://github.com/anonymous2505/ConSegAP](https://github.com/anonymous2505/ConSegAP) for details.
+
+The plot (`figures/online_results.png`) visualizes ConSegAP’s predicted event boundaries against ground truth, demonstrating superior fidelity. Full metrics (Precision, Recall, F1, Grid Accuracy, Event Accuracy, Event-level IoU) are available in `results/bci_2a/online_metrics.csv`. See the repository at [https://github.com/anonymous2505/ConSegAP](https://github.com/anonymous2505/ConSegAP) for further details.
 
 ## Contributing
 
