@@ -11,16 +11,10 @@ ConSegAP, a groundbreaking end-to-end framework for online EEG event segmentatio
 To set up the environment, create a Conda environment and install dependencies:
 
 ```bash
-conda create -n consegap python=3.9.12
+conda create -n consegap python=3.9
 conda activate consegap
 pip install -r requirements.txt
 ```
-
-To generate `requirements.txt`, activate your environment and run:
-```bash
-pip freeze > requirements.txt
-```
-Edit to keep only essential packages (e.g., `torch`, `mne`), as described in `docs/setup.md`.
 
 ## Dataset Setup
 
