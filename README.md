@@ -159,11 +159,11 @@ This part describes how to reproduce ConSegAP’s online EEG segmentation experi
 
 ### Dataset Processing
 
-Preprocess to reconstruct the 60-second sequence：
+This part requires using the data that has been processed in the 'Dataset Setup' part before, and then running the following code to generate a 60 second sequence:
 ```bash
 python preprocess/online-sequence.py
 ```
-This code will generate ' test_data.h5'. To use this data directly, ensure it’s in:
+This code will generate 'test_data.h5' (defualt for sub01, you can change it in online-sequence.py). To use this data directly, ensure it’s in:
 
 ```
 data/
@@ -171,33 +171,17 @@ data/
     test_data.h5  # Preprocessed 60-second sequence
 ```
 
-### Running the Experiment
+### Running the Experiment and Visualizing Results
 
-Use the included pre-trained weights (`models/consegap_bci_2a.pth`) and preprocessed data to run the online segmentation experiment:
+Use the trained weights, or you can directly use the weights and preprocessed data we provide for online segmentation experiments:
 
 ```bash
-python eval_model.py --model-file models/consegap_bci_2a.pth --data-file data/bci_iv_2a/online_sequence.mat --online --window-size 5000 --step-size 2 --batch-size 32
+python evaluate_online.py --data-file ./data/Online_exp_data/test_data.h5 --model ours --model-path best_model_1.pth --sample-idx 1 --batch-size 32 --stride 2 --segment-length 5000 --output-dir plots
 ```
 
 This command processes the 60-second sequence with a 20-second sliding window (5000 timesteps), advancing by 2 timesteps, and aggregates predictions via majority voting, reproducing the paper’s real-time results.
 
-### Results
-
-ConSegAP outperforms baselines in online segmentation, achieving high event boundary accuracy and a sampling rate of 118 samples/s (~10 ms latency). The table below compares Event-level IoU and sampling rates for the BCI IV-2a online experiment, with the best result in **bold**.
-
-| Method        | Event-level IoU ↑ | Samples/s | Model Link |
-|---------------|-------------------|-----------|------------|
-| EEGNet        | 0.50 ± 0.31       | 115       | -          |
-| DeepConvNet   | 0.59 ± 0.17       | 112       | -          |
-| Conformer     | 0.83 ± 0.07       | 105       | -          |
-| CTNet         | 0.89 ± 0.03       | 86        | -          |
-| **ConSegAP**  | **0.90 ± 0.02**   | **118**   | [Link](https://drive.google.com/file/d/anonymous_consegap_bci_2a.pth) |
-
-**Visualize Results**:
-Generate a plot of event boundary alignment (as shown in the paper’s Figure):
-```bash
-python plot_results.py --results-dir results/bci_2a --online --output figures/online_results.png
-```
+![ConSegAP Architecture](figures/architect.png)
 
 The plot (`figures/online_results.png`) visualizes ConSegAP’s predicted event boundaries against ground truth, demonstrating superior fidelity. Full metrics (Precision, Recall, F1, Grid Accuracy, Event Accuracy, Event-level IoU) are available in `results/bci_2a/online_metrics.csv`. See the repository at [https://github.com/anonymous2505/ConSegAP](https://github.com/anonymous2505/ConSegAP) for further details.
 
