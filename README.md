@@ -179,11 +179,11 @@ Use the trained weights, or you can directly use the weights and preprocessed da
 python evaluate_online.py --data-file ./data/Online_exp_data/test_data.h5 --model ours --model-path best_model_1.pth --sample-idx 1 --batch-size 32 --stride 2 --segment-length 5000 --output-dir plots
 ```
 
-This command processes the 60-second sequence with a 20-second sliding window (5000 timesteps), advancing by 2 timesteps, and aggregates predictions via majority voting, reproducing the paper’s real-time results.
+This command processes the 60-second sequence with a 20-second sliding window (5000 timesteps), advancing by 2 timesteps, and aggregates predictions via majority voting, reproducing the paper’s real-time results.The visualization results can be found in (`plots/global_events_sample.png`)
 
-![ConSegAP Architecture](figures/architect.png)
+![ConSegAP Architecture](figures/online.png)
 
-The plot (`figures/online_results.png`) visualizes ConSegAP’s predicted event boundaries against ground truth, demonstrating superior fidelity. Full metrics (Precision, Recall, F1, Grid Accuracy, Event Accuracy, Event-level IoU) are available in `results/bci_2a/online_metrics.csv`. See the repository at [https://github.com/anonymous2505/ConSegAP](https://github.com/anonymous2505/ConSegAP) for further details.
+This plot visualizes ConSegAP’s predicted event boundaries against ground truth and other backbones, demonstrating superior fidelity. 
 
 ## Contributing
 
