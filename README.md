@@ -34,6 +34,10 @@ pip install -r requirements.txt
        B0101T.gdf
        B0102T.gdf
        ...
+     BCICIV_2b_labels/
+       B0101T.mat
+       B0102T.mat
+       ...
    ```
    - **BCI IV-2a**: Contains MATLAB `.mat` files per subject (A01–A09), with training (`A0xT.mat`) and test (`A0xE.mat`) files. Each file includes EEG signals (22 channels, 250 Hz), event labels, and metadata (channel names, sampling rate).
    - **BCI IV-2b**: Contains GDF files per subject (B01–B09), with multiple session files (e.g., `B0x0yT.gdf` for training). Each file includes EEG signals (3 channels, 250 Hz), event cues, and metadata.
