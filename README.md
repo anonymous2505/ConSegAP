@@ -75,7 +75,7 @@ Edit to keep only essential packages (e.g., `torch`, `mne`), as described in `do
           B01E.mat
           B01T.mat
           ...
-If you want to skip this step, you can find the processed data [here](https://drive.google.com/drive/folders/1HnIWjzlpS-5Md0kQqa-HtD0MNO5JZlEo?usp=sharing).
+📂 If you want to skip this step, you can find the processed data [here](https://drive.google.com/drive/folders/1HnIWjzlpS-5Md0kQqa-HtD0MNO5JZlEo?usp=sharing).
 ## Training
 
 To train ConSegAP on BCI IV-2a for a specific subject (e.g., sub01), run:
@@ -99,7 +99,7 @@ python train_model.py --data 2b --data-dir ./data/4_2b_data/standard_and_break_t
 Run `python train_model.py --help` for options.
 
 ## Evaluation
-We have provided some [weights](https://drive.google.com/drive/folders/1HnIWjzlpS-5Md0kQqa-HtD0MNO5JZlEo?usp=sharing) for you to quickly reproduce our results.
+📂 We have provided some [weights](https://drive.google.com/file/d/1TgRBOa1pn_i-yBNJIqsAWJPOA7lIgvj_/view?usp=sharing) for you to quickly reproduce our results.
 To evaluate the trained ConSegAP model on BCI IV-2a for a subject (e.g., sub01), run:
 
 ```bash
@@ -173,7 +173,7 @@ data/
 
 ### Running the Experiment and Visualizing Results
 
-Use the trained weights, or you can directly use the weights and preprocessed data we provide for online segmentation experiments:
+📂 Use the trained weights from 'Training' part, or you can directly use the [weights](https://drive.google.com/file/d/1TgRBOa1pn_i-yBNJIqsAWJPOA7lIgvj_/view?usp=sharing) and [preprocessed data](https://drive.google.com/drive/folders/1akMRfJSq79pJy86PEDVbmeMXDNC0f-gW?usp=sharing)(for sub 01) we provide for online segmentation experiments:
 
 ```bash
 python evaluate_online.py --data-file ./data/Online_exp_data/test_data.h5 --model ours --model-path best_model_1.pth --sample-idx 1 --batch-size 32 --stride 2 --segment-length 5000 --output-dir plots
@@ -184,14 +184,3 @@ This command processes the 60-second sequence with a 20-second sliding window (5
 ![ConSegAP Architecture](figures/online.png)
 
 This plot visualizes ConSegAP’s predicted event boundaries against ground truth and other backbones, demonstrating superior fidelity. 
-
-## Contributing
-
-This project is licensed under the MIT License (see `LICENSE`). To contribute:
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/your-feature`).
-3. Commit changes (`git commit -m 'Add your feature'`).
-4. Push to the branch (`git push origin feature/your-feature`).
-5. Open a pull request.
-
-Follow PEP 8 style guidelines and include unit tests in `tests/`. Report issues or feature requests on the GitHub Issues page.
