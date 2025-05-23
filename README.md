@@ -181,6 +181,6 @@ python evaluate_online.py --data-file ./data/Online_exp_data/test_data.h5 --mode
 
 This command processes the 60-second sequence with a 20-second sliding window (5000 timesteps), advancing by 2 timesteps, and aggregates predictions via majority voting, reproducing the paper’s real-time results.The visualization results can be found in (`plots/global_events_sample.png`)
 
-![ConSegAP Architecture](figures/online.png)
+![Online Experiment](figures/online.png)
 
 This plot visualizes ConSegAP’s predicted event boundaries against ground truth and other backbones, demonstrating superior fidelity. 
