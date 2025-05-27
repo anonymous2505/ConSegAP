@@ -2,4 +2,6 @@
 
 This repository is the official implementation of ConSegAp.
 
-Code coming soon, now it is in *Supplementary Material*.
+Code coming soon.
+
+## Now it is in *Supplementary Material*.
