@@ -246,6 +246,7 @@ ConSegAP outperforms baseline methods on the BCI Competition IV-2a and IV-2b dat
   </tr>
 </table>
 </div>
+
 ## Online Experiment
 
 This part describes how to reproduce ConSegAP’s online EEG segmentation experiment on a 60-second reconstructed EEG sequence from the BCI IV-2a dataset (15,000 timesteps, 250 Hz), embedding 3–9 motor imagery events. The experiment uses a sliding window of 5000 timesteps (20 seconds) with a step size of 3, simulating real-time EEG streaming. Included pre-trained weights and preprocessed data allow rapid replication of the paper’s results, with ConSegAP achieving ~10 ms latency and high event boundary accuracy.
