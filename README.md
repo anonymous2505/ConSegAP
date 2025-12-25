@@ -136,116 +136,117 @@ Evaluating ours model for subject 1...
 
 ConSegAP outperforms baseline methods on the BCI Competition IV-2a and IV-2b datasets for EEG event segmentation, achieving superior performance across multiple metrics. The table below reports mean ± standard deviation values over the test set for each dataset, with the best results in **bold**.
 
-<table>
-  <tr>
-    <th><small>Method</small></th>
-    <th><small>Precision &uarr;</small></th>
-    <th><small>Recall &uarr;</small></th>
-    <th><small>F1 &uarr;</small></th>
-    <th><small>Grid Acc. (%) &uarr;</small></th>
-    <th><small>Event Acc. (%) &uarr;</small></th>
-    <th><small>Event IoU &uarr;</small></th>
-  </tr>
+<div align="center">
+  <table>
+    <tr>
+      <th align="center"><small>Method</small></th>
+      <th align="center"><small>Precision &uarr;</small></th>
+      <th align="center"><small>Recall &uarr;</small></th>
+      <th align="center"><small>F1 &uarr;</small></th>
+      <th align="center"><small>Grid Acc. (%) &uarr;</small></th>
+      <th align="center"><small>Event Acc. (%) &uarr;</small></th>
+      <th align="center"><small>Event IoU &uarr;</small></th>
+    </tr>
 
-  <tr>
-    <td colspan="7" align="center"><strong><small>BCI IV-2a</small></strong></td>
-  </tr>
-  <tr>
-    <td><small>EEGNet</small></td>
-    <td><small>0.54 &plusmn; 0.07</small></td>
-    <td><small>0.53 &plusmn; 0.07</small></td>
-    <td><small>0.52 &plusmn; 0.08</small></td>
-    <td><small>75.8 &plusmn; 3.7</small></td>
-    <td><small>51.3 &plusmn; 10.9</small></td>
-    <td><small>0.50 &plusmn; 0.31</small></td>
-  </tr>
-  <tr>
-    <td><small>DeepConvNet</small></td>
-    <td><small>0.54 &plusmn; 0.07</small></td>
-    <td><small>0.53 &plusmn; 0.07</small></td>
-    <td><small>0.52 &plusmn; 0.07</small></td>
-    <td><small>76.5 &plusmn; 3.8</small></td>
-    <td><small>54.7 &plusmn; 12.7</small></td>
-    <td><small>0.59 &plusmn; 0.17</small></td>
-  </tr>
-  <tr>
-    <td><small>Conformer</small></td>
-    <td><small>0.61 &plusmn; 0.13</small></td>
-    <td><small>0.55 &plusmn; 0.12</small></td>
-    <td><small>0.54 &plusmn; 0.14</small></td>
-    <td><small><em>85.1 &plusmn; 7.2</em></small></td>
-    <td><small>57.9 &plusmn; 20.5</small></td>
-    <td><small>0.83 &plusmn; 0.07</small></td>
-  </tr>
-  <tr>
-    <td><small>CTNet</small></td>
-    <td><small><em>0.69 &plusmn; 0.15</em></small></td>
-    <td><small><em>0.69 &plusmn; 0.16</em></small></td>
-    <td><small><em>0.66 &plusmn; 0.17</em></small></td>
-    <td><small>83.8 &plusmn; 7.3</small></td>
-    <td><small><em>64.9 &plusmn; 17.2</em></small></td>
-    <td><small><em>0.89 &plusmn; 0.03</em></small></td>
-  </tr>
-  <tr>
-    <td><small><strong>ConSegAP</strong></small></td>
-    <td><small><strong>0.74 &plusmn; 0.14</strong></small></td>
-    <td><small><strong>0.72 &plusmn; 0.14</strong></small></td>
-    <td><small><strong>0.71 &plusmn; 0.15</strong></small></td>
-    <td><small><strong>85.5 &plusmn; 7.8</strong></small></td>
-    <td><small><strong>71.1 &plusmn; 17.0</strong></small></td>
-    <td><small><strong>0.90 &plusmn; 0.02</strong></small></td>
-  </tr>
+    <tr>
+      <td colspan="7" align="center"><strong><small>BCI IV-2a</small></strong></td>
+    </tr>
+    <tr align="center">
+      <td><small>EEGNet</small></td>
+      <td><small>0.54 &plusmn; 0.07</small></td>
+      <td><small>0.53 &plusmn; 0.07</small></td>
+      <td><small>0.52 &plusmn; 0.08</small></td>
+      <td><small>75.8 &plusmn; 3.7</small></td>
+      <td><small>51.3 &plusmn; 10.9</small></td>
+      <td><small>0.50 &plusmn; 0.31</small></td>
+    </tr>
+    <tr align="center">
+      <td><small>DeepConvNet</small></td>
+      <td><small>0.54 &plusmn; 0.07</small></td>
+      <td><small>0.53 &plusmn; 0.07</small></td>
+      <td><small>0.52 &plusmn; 0.07</small></td>
+      <td><small>76.5 &plusmn; 3.8</small></td>
+      <td><small>54.7 &plusmn; 12.7</small></td>
+      <td><small>0.59 &plusmn; 0.17</small></td>
+    </tr>
+    <tr align="center">
+      <td><small>Conformer</small></td>
+      <td><small>0.61 &plusmn; 0.13</small></td>
+      <td><small>0.55 &plusmn; 0.12</small></td>
+      <td><small>0.54 &plusmn; 0.14</small></td>
+      <td><small><em>85.1 &plusmn; 7.2</em></small></td>
+      <td><small>57.9 &plusmn; 20.5</small></td>
+      <td><small>0.83 &plusmn; 0.07</small></td>
+    </tr>
+    <tr align="center">
+      <td><small>CTNet</small></td>
+      <td><small><em>0.69 &plusmn; 0.15</em></small></td>
+      <td><small><em>0.69 &plusmn; 0.16</em></small></td>
+      <td><small><em>0.66 &plusmn; 0.17</em></small></td>
+      <td><small>83.8 &plusmn; 7.3</small></td>
+      <td><small><em>64.9 &plusmn; 17.2</em></small></td>
+      <td><small><em>0.89 &plusmn; 0.03</em></small></td>
+    </tr>
+    <tr align="center">
+      <td><small><strong>ConSegAP</strong></small></td>
+      <td><small><strong>0.74 &plusmn; 0.14</strong></small></td>
+      <td><small><strong>0.72 &plusmn; 0.14</strong></small></td>
+      <td><small><strong>0.71 &plusmn; 0.15</strong></small></td>
+      <td><small><strong>85.5 &plusmn; 7.8</strong></small></td>
+      <td><small><strong>71.1 &plusmn; 17.0</strong></small></td>
+      <td><small><strong>0.90 &plusmn; 0.02</strong></small></td>
+    </tr>
 
-  <tr>
-    <td colspan="7" align="center"><strong><small>BCI IV-2b</small></strong></td>
-  </tr>
-  <tr>
-    <td><small>EEGNet</small></td>
-    <td><small>0.55 &plusmn; 0.06</small></td>
-    <td><small>0.50 &plusmn; 0.11</small></td>
-    <td><small>0.45 &plusmn; 0.08</small></td>
-    <td><small>54.1 &plusmn; 15.7</small></td>
-    <td><small>62.4 &plusmn; 10.5</small></td>
-    <td><small>0.52 &plusmn; 0.18</small></td>
-  </tr>
-  <tr>
-    <td><small>DeepConvNet</small></td>
-    <td><small>0.51 &plusmn; 0.08</small></td>
-    <td><small>0.51 &plusmn; 0.07</small></td>
-    <td><small>0.46 &plusmn; 0.08</small></td>
-    <td><small>54.1 &plusmn; 13.8</small></td>
-    <td><small>68.9 &plusmn; 12.1</small></td>
-    <td><small>0.31 &plusmn; 0.10</small></td>
-  </tr>
-  <tr>
-    <td><small>Conformer</small></td>
-    <td><small>0.58 &plusmn; 0.09</small></td>
-    <td><small>0.58 &plusmn; 0.09</small></td>
-    <td><small>0.54 &plusmn; 0.09</small></td>
-    <td><small>59.6 &plusmn; 11.0</small></td>
-    <td><small>66.5 &plusmn; 10.8</small></td>
-    <td><small>0.57 &plusmn; 0.15</small></td>
-  </tr>
-  <tr>
-    <td><small>CTNet</small></td>
-    <td><small><em>0.83 &plusmn; 0.09</em></small></td>
-    <td><small><em>0.82 &plusmn; 0.09</em></small></td>
-    <td><small><em>0.82 &plusmn; 0.10</em></small></td>
-    <td><small><em>89.6 &plusmn; 5.7</em></small></td>
-    <td><small><em>73.3 &plusmn; 17.1</em></small></td>
-    <td><small><em>0.81 &plusmn; 0.19</em></small></td>
-  </tr>
-  <tr>
-    <td><small><strong>ConSegAP</strong></small></td>
-    <td><small><strong>0.88 &plusmn; 0.08</strong></small></td>
-    <td><small><strong>0.88 &plusmn; 0.08</strong></small></td>
-    <td><small><strong>0.88 &plusmn; 0.08</strong></small></td>
-    <td><small><strong>92.2 &plusmn; 5.1</strong></small></td>
-    <td><small><strong>85.2 &plusmn; 9.9</strong></small></td>
-    <td><small><strong>0.85 &plusmn; 0.03</strong></small></td>
-  </tr>
-</table>
-
+    <tr>
+      <td colspan="7" align="center"><strong><small>BCI IV-2b</small></strong></td>
+    </tr>
+    <tr align="center">
+      <td><small>EEGNet</small></td>
+      <td><small>0.55 &plusmn; 0.06</small></td>
+      <td><small>0.50 &plusmn; 0.11</small></td>
+      <td><small>0.45 &plusmn; 0.08</small></td>
+      <td><small>54.1 &plusmn; 15.7</small></td>
+      <td><small>62.4 &plusmn; 10.5</small></td>
+      <td><small>0.52 &plusmn; 0.18</small></td>
+    </tr>
+    <tr align="center">
+      <td><small>DeepConvNet</small></td>
+      <td><small>0.51 &plusmn; 0.08</small></td>
+      <td><small>0.51 &plusmn; 0.07</small></td>
+      <td><small>0.46 &plusmn; 0.08</small></td>
+      <td><small>54.1 &plusmn; 13.8</small></td>
+      <td><small>68.9 &plusmn; 12.1</small></td>
+      <td><small>0.31 &plusmn; 0.10</small></td>
+    </tr>
+    <tr align="center">
+      <td><small>Conformer</small></td>
+      <td><small>0.58 &plusmn; 0.09</small></td>
+      <td><small>0.58 &plusmn; 0.09</small></td>
+      <td><small>0.54 &plusmn; 0.09</small></td>
+      <td><small>59.6 &plusmn; 11.0</small></td>
+      <td><small>66.5 &plusmn; 10.8</small></td>
+      <td><small>0.57 &plusmn; 0.15</small></td>
+    </tr>
+    <tr align="center">
+      <td><small>CTNet</small></td>
+      <td><small><em>0.83 &plusmn; 0.09</em></small></td>
+      <td><small><em>0.82 &plusmn; 0.09</em></small></td>
+      <td><small><em>0.82 &plusmn; 0.10</em></small></td>
+      <td><small><em>89.6 &plusmn; 5.7</em></small></td>
+      <td><small><em>73.3 &plusmn; 17.1</em></small></td>
+      <td><small><em>0.81 &plusmn; 0.19</em></small></td>
+    </tr>
+    <tr align="center">
+      <td><small><strong>ConSegAP</strong></small></td>
+      <td><small><strong>0.88 &plusmn; 0.08</strong></small></td>
+      <td><small><strong>0.88 &plusmn; 0.08</strong></small></td>
+      <td><small><strong>0.88 &plusmn; 0.08</strong></small></td>
+      <td><small><strong>92.2 &plusmn; 5.1</strong></small></td>
+      <td><small><strong>85.2 &plusmn; 9.9</strong></small></td>
+      <td><small><strong>0.85 &plusmn; 0.03</strong></small></td>
+    </tr>
+  </table>
+</div>
 ## Online Experiment
 
 This part describes how to reproduce ConSegAP’s online EEG segmentation experiment on a 60-second reconstructed EEG sequence from the BCI IV-2a dataset (15,000 timesteps, 250 Hz), embedding 3–9 motor imagery events. The experiment uses a sliding window of 5000 timesteps (20 seconds) with a step size of 3, simulating real-time EEG streaming. Included pre-trained weights and preprocessed data allow rapid replication of the paper’s results, with ConSegAP achieving ~10 ms latency and high event boundary accuracy.
