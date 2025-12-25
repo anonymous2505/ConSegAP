@@ -2,7 +2,9 @@
 
 This repository is the official implementation of ConSegAp.
 
-![ConSegAP Architecture](figures/architect.png)
+<p align="center">
+  <img src="figures/architect.png" alt="ConSegAP Architecture" width="85%">
+</p>
 
 ConSegAP, a groundbreaking end-to-end framework for online EEG event segmentation, addressing the scarcity of real-time segmentation research in motor imagery BCIs, where classification-oriented approaches predominate. ConSegAP dynamically segments EEG signals to handle variable event durations, captures long-range dependencies with linear-time complexity, and ensures temporal coherence through a specialized loss. This design enhances boundary precision and classification performance while achieving sub-10ms latency, making it ideal for real-time motor imagery BCIs.
 
