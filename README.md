@@ -134,7 +134,7 @@ Evaluating ours model for subject 1...
 
 ## Results
 
-ConSegAP outperforms baseline methods on the BCI Competition IV-2a and IV-2b datasets for EEG event segmentation, achieving superior performance across multiple metrics. The table below reports mean ± standard deviation values over the test set for each dataset, with the best results in **bold**.
+ConSegAP outperforms baseline methods on the BCI Competition IV-2a and IV-2b datasets for EEG event segmentation, achieving superior performance across multiple metrics. The table below reports mean ± Standard Error of the Mean over the test set for each dataset, with the best results in **bold**.
 
 <div align="center">
 <table>
