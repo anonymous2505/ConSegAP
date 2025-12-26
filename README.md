@@ -135,114 +135,114 @@ Evaluating ours model for subject 1...
 ## Results
 
 ConSegAP outperforms baseline methods on the BCI Competition IV-2a and IV-2b datasets for EEG event segmentation, achieving superior performance across multiple metrics. The table below reports mean ± standard deviation values over the test set for each dataset, with the best results in **bold**.
+
 <div align="center">
 <table>
-  <tr>
+<tr>
       <th align="center"><small>Method</small></th>
       <th align="center"><small>Precision&nbsp;&uarr;</small></th>
       <th align="center"><small>Recall&nbsp;&uarr;</small></th>
       <th align="center"><small>F1&nbsp;&uarr;</small></th>
-      <th align="center"><small>Grid&nbsp;Acc.&nbsp;(%)&nbsp;&uarr;</small></th>
-      <th align="center"><small>Event&nbsp;Acc.&nbsp;(%)&nbsp;&uarr;</small></th>
-      <th align="center"><small>Event&nbsp;IoU&nbsp;&uarr;</small></th>
+      <th align="center"><small>G-Acc&nbsp;&uarr;</small></th>
+      <th align="center"><small>E-Acc&nbsp;&uarr;</small></th>
+      <th align="center"><small>E-IoU&nbsp;&uarr;</small></th>
     </tr>
 
 <tr>
-      <td colspan="7" align="center"><strong><small>BCI&nbsp;IV-2a</small></strong></td>
+      <td colspan="7" align="center"><strong><small>Within-Subject&nbsp;(BCI&nbsp;IV-2a)</small></strong></td>
     </tr>
     <tr align="center">
       <td><small>EEGNet</small></td>
-      <td><small>0.54&nbsp;&plusmn;&nbsp;0.07</small></td>
-      <td><small>0.53&nbsp;&plusmn;&nbsp;0.07</small></td>
-      <td><small>0.52&nbsp;&plusmn;&nbsp;0.08</small></td>
-      <td><small>75.8&nbsp;&plusmn;&nbsp;3.7</small></td>
-      <td><small>51.3&nbsp;&plusmn;&nbsp;10.9</small></td>
-      <td><small>0.50&nbsp;&plusmn;&nbsp;0.31</small></td>
+      <td><small>0.54&nbsp;&plusmn;&nbsp;0.02</small></td>
+      <td><small>0.53&nbsp;&plusmn;&nbsp;0.02</small></td>
+      <td><small>0.52&nbsp;&plusmn;&nbsp;0.03</small></td>
+      <td><small>75.8&nbsp;&plusmn;&nbsp;1.2</small></td>
+      <td><small>51.3&nbsp;&plusmn;&nbsp;3.6</small></td>
+      <td><small>0.50&nbsp;&plusmn;&nbsp;0.10</small></td>
     </tr>
     <tr align="center">
       <td><small>DeepConvNet</small></td>
-      <td><small>0.54&nbsp;&plusmn;&nbsp;0.07</small></td>
-      <td><small>0.53&nbsp;&plusmn;&nbsp;0.07</small></td>
-      <td><small>0.52&nbsp;&plusmn;&nbsp;0.07</small></td>
-      <td><small>76.5&nbsp;&plusmn;&nbsp;3.8</small></td>
-      <td><small>54.7&nbsp;&plusmn;&nbsp;12.7</small></td>
-      <td><small>0.59&nbsp;&plusmn;&nbsp;0.17</small></td>
+      <td><small>0.54&nbsp;&plusmn;&nbsp;0.02</small></td>
+      <td><small>0.53&nbsp;&plusmn;&nbsp;0.02</small></td>
+      <td><small>0.52&nbsp;&plusmn;&nbsp;0.02</small></td>
+      <td><small>76.5&nbsp;&plusmn;&nbsp;1.3</small></td>
+      <td><small>54.7&nbsp;&plusmn;&nbsp;4.2</small></td>
+      <td><small>0.59&nbsp;&plusmn;&nbsp;0.06</small></td>
     </tr>
     <tr align="center">
       <td><small>Conformer</small></td>
-      <td><small>0.61&nbsp;&plusmn;&nbsp;0.13</small></td>
-      <td><small>0.55&nbsp;&plusmn;&nbsp;0.12</small></td>
-      <td><small>0.54&nbsp;&plusmn;&nbsp;0.14</small></td>
-      <td><small><em>85.1&nbsp;&plusmn;&nbsp;7.2</em></small></td>
-      <td><small>57.9&nbsp;&plusmn;&nbsp;20.5</small></td>
-      <td><small>0.83&nbsp;&plusmn;&nbsp;0.07</small></td>
+      <td><small>0.61&nbsp;&plusmn;&nbsp;0.04</small></td>
+      <td><small>0.55&nbsp;&plusmn;&nbsp;0.04</small></td>
+      <td><small>0.54&nbsp;&plusmn;&nbsp;0.05</small></td>
+      <td><small><em>85.1&nbsp;&plusmn;&nbsp;2.4</em></small></td> <td><small>57.9&nbsp;&plusmn;&nbsp;6.8</small></td>
+      <td><small>0.83&nbsp;&plusmn;&nbsp;0.02</small></td>
     </tr>
     <tr align="center">
       <td><small>CTNet</small></td>
-      <td><small><em>0.69&nbsp;&plusmn;&nbsp;0.15</em></small></td>
-      <td><small><em>0.69&nbsp;&plusmn;&nbsp;0.16</em></small></td>
-      <td><small><em>0.66&nbsp;&plusmn;&nbsp;0.17</em></small></td>
-      <td><small>83.8&nbsp;&plusmn;&nbsp;7.3</small></td>
-      <td><small><em>64.9&nbsp;&plusmn;&nbsp;17.2</em></small></td>
-      <td><small><em>0.89&nbsp;&plusmn;&nbsp;0.03</em></small></td>
+      <td><small><em>0.69&nbsp;&plusmn;&nbsp;0.05</em></small></td>
+      <td><small><em>0.69&nbsp;&plusmn;&nbsp;0.05</em></small></td>
+      <td><small><em>0.66&nbsp;&plusmn;&nbsp;0.06</em></small></td>
+      <td><small>83.8&nbsp;&plusmn;&nbsp;2.4</small></td>
+      <td><small><em>64.9&nbsp;&plusmn;&nbsp;5.7</em></small></td>
+      <td><small><em>0.89&nbsp;&plusmn;&nbsp;0.01</em></small></td>
     </tr>
     <tr align="center">
       <td><small><strong>ConSegAP</strong></small></td>
-      <td><small><strong>0.74&nbsp;&plusmn;&nbsp;0.14</strong></small></td>
-      <td><small><strong>0.72&nbsp;&plusmn;&nbsp;0.14</strong></small></td>
-      <td><small><strong>0.71&nbsp;&plusmn;&nbsp;0.15</strong></small></td>
-      <td><small><strong>85.5&nbsp;&plusmn;&nbsp;7.8</strong></small></td>
-      <td><small><strong>71.1&nbsp;&plusmn;&nbsp;17.0</strong></small></td>
-      <td><small><strong>0.90&nbsp;&plusmn;&nbsp;0.02</strong></small></td>
+      <td><small><strong>0.74&nbsp;&plusmn;&nbsp;0.05</strong></small></td>
+      <td><small><strong>0.72&nbsp;&plusmn;&nbsp;0.05</strong></small></td>
+      <td><small><strong>0.71&nbsp;&plusmn;&nbsp;0.05</strong></small></td>
+      <td><small><strong>85.5&nbsp;&plusmn;&nbsp;2.6</strong></small></td>
+      <td><small><strong>71.1&nbsp;&plusmn;&nbsp;5.7</strong></small></td>
+      <td><small><strong>0.90&nbsp;&plusmn;&nbsp;0.01</strong></small></td>
     </tr>
 
 <tr>
-      <td colspan="7" align="center"><strong><small>BCI&nbsp;IV-2b</small></strong></td>
+      <td colspan="7" align="center"><strong><small>Within-Subject&nbsp;(BCI&nbsp;IV-2b)</small></strong></td>
     </tr>
-<tr align="center">
+    <tr align="center">
       <td><small>EEGNet</small></td>
-      <td><small>0.55&nbsp;&plusmn;&nbsp;0.06</small></td>
-      <td><small>0.50&nbsp;&plusmn;&nbsp;0.11</small></td>
-      <td><small>0.45&nbsp;&plusmn;&nbsp;0.08</small></td>
-      <td><small>54.1&nbsp;&plusmn;&nbsp;15.7</small></td>
-      <td><small>62.4&nbsp;&plusmn;&nbsp;10.5</small></td>
-      <td><small>0.52&nbsp;&plusmn;&nbsp;0.18</small></td>
+      <td><small>0.55&nbsp;&plusmn;&nbsp;0.02</small></td>
+      <td><small>0.50&nbsp;&plusmn;&nbsp;0.04</small></td>
+      <td><small>0.45&nbsp;&plusmn;&nbsp;0.03</small></td>
+      <td><small>54.1&nbsp;&plusmn;&nbsp;5.2</small></td>
+      <td><small>62.4&nbsp;&plusmn;&nbsp;3.5</small></td>
+      <td><small>0.52&nbsp;&plusmn;&nbsp;0.06</small></td>
     </tr>
     <tr align="center">
       <td><small>DeepConvNet</small></td>
-      <td><small>0.51&nbsp;&plusmn;&nbsp;0.08</small></td>
-      <td><small>0.51&nbsp;&plusmn;&nbsp;0.07</small></td>
-      <td><small>0.46&nbsp;&plusmn;&nbsp;0.08</small></td>
-      <td><small>54.1&nbsp;&plusmn;&nbsp;13.8</small></td>
-      <td><small>68.9&nbsp;&plusmn;&nbsp;12.1</small></td>
-      <td><small>0.31&nbsp;&plusmn;&nbsp;0.10</small></td>
+      <td><small>0.51&nbsp;&plusmn;&nbsp;0.03</small></td>
+      <td><small>0.51&nbsp;&plusmn;&nbsp;0.02</small></td>
+      <td><small>0.46&nbsp;&plusmn;&nbsp;0.03</small></td>
+      <td><small>54.1&nbsp;&plusmn;&nbsp;4.6</small></td>
+      <td><small>68.9&nbsp;&plusmn;&nbsp;4.0</small></td>
+      <td><small>0.31&nbsp;&plusmn;&nbsp;0.03</small></td>
     </tr>
     <tr align="center">
       <td><small>Conformer</small></td>
-      <td><small>0.58&nbsp;&plusmn;&nbsp;0.09</small></td>
-      <td><small>0.58&nbsp;&plusmn;&nbsp;0.09</small></td>
-      <td><small>0.54&nbsp;&plusmn;&nbsp;0.09</small></td>
-      <td><small>59.6&nbsp;&plusmn;&nbsp;11.0</small></td>
-      <td><small>66.5&nbsp;&plusmn;&nbsp;10.8</small></td>
-      <td><small>0.57&nbsp;&plusmn;&nbsp;0.15</small></td>
+      <td><small>0.58&nbsp;&plusmn;&nbsp;0.03</small></td>
+      <td><small>0.58&nbsp;&plusmn;&nbsp;0.03</small></td>
+      <td><small>0.54&nbsp;&plusmn;&nbsp;0.03</small></td>
+      <td><small>59.6&nbsp;&plusmn;&nbsp;3.7</small></td>
+      <td><small>66.5&nbsp;&plusmn;&nbsp;3.6</small></td>
+      <td><small>0.57&nbsp;&plusmn;&nbsp;0.05</small></td>
     </tr>
     <tr align="center">
       <td><small>CTNet</small></td>
-      <td><small><em>0.83&nbsp;&plusmn;&nbsp;0.09</em></small></td>
-      <td><small><em>0.82&nbsp;&plusmn;&nbsp;0.09</em></small></td>
-      <td><small><em>0.82&nbsp;&plusmn;&nbsp;0.10</em></small></td>
-      <td><small><em>89.6&nbsp;&plusmn;&nbsp;5.7</em></small></td>
-      <td><small><em>73.3&nbsp;&plusmn;&nbsp;17.1</em></small></td>
-      <td><small><em>0.81&nbsp;&plusmn;&nbsp;0.19</em></small></td>
+      <td><small><em>0.83&nbsp;&plusmn;&nbsp;0.03</em></small></td>
+      <td><small><em>0.82&nbsp;&plusmn;&nbsp;0.03</em></small></td>
+      <td><small><em>0.82&nbsp;&plusmn;&nbsp;0.03</em></small></td>
+      <td><small><em>89.6&nbsp;&plusmn;&nbsp;1.9</em></small></td>
+      <td><small><em>73.3&nbsp;&plusmn;&nbsp;5.7</em></small></td>
+      <td><small><em>0.81&nbsp;&plusmn;&nbsp;0.06</em></small></td>
     </tr>
-<tr align="center">
+    <tr align="center">
       <td><small><strong>ConSegAP</strong></small></td>
-      <td><small><strong>0.88&nbsp;&plusmn;&nbsp;0.08</strong></small></td>
-      <td><small><strong>0.88&nbsp;&plusmn;&nbsp;0.08</strong></small></td>
-      <td><small><strong>0.88&nbsp;&plusmn;&nbsp;0.08</strong></small></td>
-      <td><small><strong>92.2&nbsp;&plusmn;&nbsp;5.1</strong></small></td>
-      <td><small><strong>85.2&nbsp;&plusmn;&nbsp;9.9</strong></small></td>
-      <td><small><strong>0.85&nbsp;&plusmn;&nbsp;0.03</strong></small></td>
+      <td><small><strong>0.88&nbsp;&plusmn;&nbsp;0.03</strong></small></td>
+      <td><small><strong>0.88&nbsp;&plusmn;&nbsp;0.03</strong></small></td>
+      <td><small><strong>0.88&nbsp;&plusmn;&nbsp;0.03</strong></small></td>
+      <td><small><strong>92.2&nbsp;&plusmn;&nbsp;1.7</strong></small></td>
+      <td><small><strong>85.2&nbsp;&plusmn;&nbsp;3.3</strong></small></td>
+      <td><small><strong>0.85&nbsp;&plusmn;&nbsp;0.01</strong></small></td>
     </tr>
 </table>
 </div>
